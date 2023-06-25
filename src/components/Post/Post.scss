@@ -1,0 +1,114 @@
+@mixin normal-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-component {
+  position: relative; // needed for NavClickTarget to work
+  margin-bottom: 20px;
+  padding: 20px 20px 15px 20px; // 15 to compensate for border-bottom
+
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(black, 0.1);
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+
+  a,
+  button {
+    z-index: 1; // needed for NavClickTarget to work
+    position: relative;
+  }
+
+  .data {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .score {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+
+    .badges {
+      display: flex;
+      flex-direction: column;
+      gap: 1ch;
+    }
+
+    .mod-icon {
+      margin-top: 15px;
+    }
+  }
+
+  .title-bar {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+    .post-title {
+      @include normal-link;
+    }
+  }
+
+  .post-info {
+    margin-bottom: 7px;
+  }
+
+  .bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8em;
+
+    .comments {
+      @include normal-link;
+      display: inline-flex;
+      align-items: center;
+      gap: 1ch;
+    }
+  }
+
+  .content-wrapper {
+    margin-bottom: 15px;
+
+    iframe {
+      width: 100%;
+      max-height: var(--max-content-height);
+      border: none;
+      z-index: 2;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .post-component {
+    grid-template-columns: 1fr;
+
+    .data {
+      grid-row: 1;
+    }
+
+    .score {
+      grid-row: 2;
+      flex-direction: row;
+      align-items: center;
+
+      .mod-icon,
+      .gold-icon {
+        margin-right: 8px;
+        margin-top: 0;
+      }
+    }
+
+    .content-wrapper {
+      margin: {
+        left: calc(var(--content-padding) * -1);
+        right: calc(var(--content-padding) * -1);
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+
+  & > button {
+    vertical-align: middle;
+  }
+
+  .dropdown-overlay {
+    top: 80%;
+    z-index: 50;
+    min-width: max-content; // make sure the width of the overlay is not limited by the wrapper
+
+    position: absolute;
+    margin-top: 5px;
+
+    opacity: 0;
+    transform: scaleY(0.8);
+    transform-origin: center top;
+    transition: all 150ms;
+
+    pointer-events: none;
+
+    &.active {
+      pointer-events: inherit;
+      opacity: 1;
+      transform: scaleY(1);
+    }
+
+    &.bottomLeft {
+      left: 0;
+      border-radius: 5px; // no idea why this is required, but looks odd otherwise
+    }
+
+    &.bottomRight {
+      right: -5px;
+      border-radius: 5px; // same here lol
+    }
+  }
+}

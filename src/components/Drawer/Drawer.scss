@@ -1,0 +1,44 @@
+.drawer-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85%;
+  z-index: 1200;
+  box-shadow: 5px 0 10px rgba(black, 0.05);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  transition: 300ms transform;
+
+  &.closed {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.underlay {
+  z-index: 1119;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(black, 0.5);
+  transition: 300ms opacity;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &.open {
+    opacity: 1;
+  }
+
+  &.closed {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
