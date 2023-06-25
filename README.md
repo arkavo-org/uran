@@ -1,3 +1,3 @@
 # Uran
 
-The name was chosen to pay homage to Saturnus. Uranus was chosen, but fearing jokes, we dropped the "us"
+To pay homage to [Saturnus](https://github.com/willwull/saturnus). Uranus was chosen, but fearing jokes, we dropped the "us"
