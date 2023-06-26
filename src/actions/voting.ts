@@ -16,6 +16,7 @@ async function voteOnContent(direction: 0 | 1 | -1, name: string) {
   const r = reddit.getSnoowrap();
   try {
     await r.oauthRequest({
+      baseUrl: "https://arkavo.net",
       uri: `/api/vote`,
       method: "post",
       form: {

@@ -122,11 +122,11 @@ export function fetchPosts(
           break;
         default:
           posts = await (r as any).oauthRequest({
+            baseUrl: "https://arkavo.net",
             uri: `${sub}/best`,
             method: "get",
           });
       }
-
       dispatch(receivePosts(subreddit, posts));
     } catch (error) {
       console.error(error);

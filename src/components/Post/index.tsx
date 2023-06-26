@@ -71,9 +71,9 @@ class Post extends React.Component<Props, {}> {
       <NavClickTarget to={post.permalink}>Open post</NavClickTarget>
     );
 
-    const platinumCounter = post.gildings.gid_3;
-    const goldCounter = post.gildings.gid_2;
-    const silverCounter = post.gildings.gid_1;
+    const platinumCounter = post.gildings?.gid_3;
+    const goldCounter = post.gildings?.gid_2;
+    const silverCounter = post.gildings?.gid_1;
 
     return (
       <Container saved={post.saved} className="post-component">
