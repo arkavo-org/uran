@@ -60,6 +60,7 @@ export function fetchSubreddit(subreddit: string) {
 function subscribe(name: string, action: "sub" | "unsub") {
   const r = reddit.getSnoowrap();
   return r.oauthRequest({
+    baseUrl: "https://arkavo.net",
     uri: "/api/subscribe",
     method: "post",
     form: {

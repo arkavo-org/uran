@@ -13,11 +13,11 @@ export async function appOnlyOauth(): Promise<AppOnlyTokens> {
   const formData = new FormData();
   formData.append(
     "grant_type",
-    "https://oauth.reddit.com/grants/installed_client",
+    "https://id.arkavo.com/grants/installed_client",
   );
   formData.append("device_id", "DO_NOT_TRACK_THIS_DEVICE");
 
-  const res = await fetch("https://www.reddit.com/api/v1/access_token", {
+  const res = await fetch("https://arkavo.net/api/v1/access_token", {
     method: "post",
     headers: {
       Authorization: `Basic ${window.btoa(`${credentials.clientId}:`)}`,

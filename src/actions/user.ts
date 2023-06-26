@@ -168,6 +168,7 @@ async function saveApi(name: string, action: "save" | "unsave") {
   const r = reddit.getSnoowrap();
   try {
     await r.oauthRequest({
+      baseUrl: "https://arkavo.net",
       uri: `/api/${action}`,
       method: "post",
       form: { id: name },

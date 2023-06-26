@@ -21,6 +21,7 @@ class Reddit {
     // https://github.com/not-an-aardvark/snoowrap/issues/80
     this.snoo.config({
       proxies: false,
+      endpointDomain: "arkavo.net"
     });
   }
 
